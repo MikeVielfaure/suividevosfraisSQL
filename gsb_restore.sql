@@ -46,6 +46,32 @@ CREATE TABLE IF NOT EXISTS fichefrais (
   FOREIGN KEY (idvisiteur) REFERENCES visiteur(id)
 ) ENGINE=InnoDB;
 
+--
+-- Dumping data for table `fichefrais`
+--
+
+INSERT INTO `fichefrais` (`idvisiteur`, `mois`, `nbjustificatifs`, `montantvalide`, `datemodif`, `idetat`) VALUES
+('a17', '01', NULL, NULL, NULL, 'CL'),
+('a17', '02', NULL, NULL, NULL, 'CR'),
+('a17', '03', NULL, NULL, NULL, 'CR'),
+('a17', '04', NULL, NULL, NULL, 'CR'),
+('a17', '05', NULL, NULL, NULL, 'CR'),
+('a17', '06', NULL, NULL, NULL, 'CR'),
+('a55', '01', NULL, NULL, NULL, 'CL'),
+('a55', '02', NULL, NULL, NULL, 'CR'),
+('a55', '03', NULL, NULL, NULL, 'CR'),
+('a55', '04', NULL, NULL, NULL, 'CR'),
+('a55', '05', NULL, NULL, NULL, 'CR'),
+('a55', '06', NULL, NULL, NULL, 'CR'),
+('b34', '01', NULL, NULL, NULL, 'CL'),
+('b34', '02', NULL, NULL, NULL, 'CR'),
+('b34', '03', NULL, NULL, NULL, 'CR'),
+('b34', '04', NULL, NULL, NULL, 'CR'),
+('b34', '05', NULL, NULL, NULL, 'CR'),
+('b34', '06', NULL, NULL, NULL, 'CR');
+
+-- --------------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS lignefraisforfait (
   idvisiteur char(4) NOT NULL,
   mois char(6) NOT NULL,
@@ -55,6 +81,86 @@ CREATE TABLE IF NOT EXISTS lignefraisforfait (
   FOREIGN KEY (idvisiteur, mois) REFERENCES fichefrais(idvisiteur, mois),
   FOREIGN KEY (idfraisforfait) REFERENCES fraisforfait(id)
 ) ENGINE=InnoDB;
+
+--
+-- Dumping data for table `lignefraisforfait`
+--
+
+INSERT INTO `lignefraisforfait` (`idvisiteur`, `mois`, `idfraisforfait`, `quantite`) VALUES
+('a17', '01', 'ETP', 5),
+('a17', '01', 'KM', 80),
+('a17', '01', 'NUI', 15),
+('a17', '01', 'REP', 25),
+('a17', '02', 'ETP', 5),
+('a17', '02', 'KM', 40),
+('a17', '02', 'NUI', 5),
+('a17', '02', 'REP', 10),
+('a17', '03', 'ETP', 5),
+('a17', '03', 'KM', 40),
+('a17', '03', 'NUI', 5),
+('a17', '03', 'REP', 5),
+('a17', '04', 'ETP', 5),
+('a17', '04', 'KM', 80),
+('a17', '04', 'NUI', 15),
+('a17', '04', 'REP', 25),
+('a17', '05', 'ETP', 5),
+('a17', '05', 'KM', 80),
+('a17', '05', 'NUI', 10),
+('a17', '05', 'REP', 20),
+('a17', '06', 'ETP', 10),
+('a17', '06', 'KM', 50),
+('a17', '06', 'NUI', 20),
+('a17', '06', 'REP', 20),
+('a55', '01', 'ETP', 5),
+('a55', '01', 'KM', 80),
+('a55', '01', 'NUI', 15),
+('a55', '01', 'REP', 25),
+('a55', '02', 'ETP', 5),
+('a55', '02', 'KM', 40),
+('a55', '02', 'NUI', 5),
+('a55', '02', 'REP', 10),
+('a55', '03', 'ETP', 5),
+('a55', '03', 'KM', 40),
+('a55', '03', 'NUI', 5),
+('a55', '03', 'REP', 5),
+('a55', '04', 'ETP', 5),
+('a55', '04', 'KM', 80),
+('a55', '04', 'NUI', 15),
+('a55', '04', 'REP', 25),
+('a55', '05', 'ETP', 5),
+('a55', '05', 'KM', 80),
+('a55', '05', 'NUI', 10),
+('a55', '05', 'REP', 20),
+('a55', '06', 'ETP', 10),
+('a55', '06', 'KM', 50),
+('a55', '06', 'NUI', 20),
+('a55', '06', 'REP', 20),
+('b34', '01', 'ETP', 5),
+('b34', '01', 'KM', 80),
+('b34', '01', 'NUI', 15),
+('b34', '01', 'REP', 25),
+('b34', '02', 'ETP', 5),
+('b34', '02', 'KM', 40),
+('b34', '02', 'NUI', 5),
+('b34', '02', 'REP', 10),
+('b34', '03', 'ETP', 5),
+('b34', '03', 'KM', 40),
+('b34', '03', 'NUI', 5),
+('b34', '03', 'REP', 5),
+('b34', '04', 'ETP', 5),
+('b34', '04', 'KM', 80),
+('b34', '04', 'NUI', 15),
+('b34', '04', 'REP', 25),
+('b34', '05', 'ETP', 5),
+('b34', '05', 'KM', 80),
+('b34', '05', 'NUI', 10),
+('b34', '05', 'REP', 20),
+('b34', '06', 'ETP', 10),
+('b34', '06', 'KM', 50),
+('b34', '06', 'NUI', 20),
+('b34', '06', 'REP', 20);
+
+-- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS lignefraishorsforfait (
   id int(11) NOT NULL auto_increment,
